@@ -11,24 +11,38 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
   </head>
   <body>
- 
+
 <h1>Welcome to the Villamaina Family Recipe App!</h1>
- 
- 
- 
+
+
+
 This site describes our favorite family recipes!
- 
- 
+
+
 <h2>Breakfast Recipes</h2>
- 
- 
+
+
 <h2>Lunch Recipes</h2>
- 
- 
+
+
 <h2>Dinner Recipes</h2>
- 
- 
+
+
 <h2>Dessert Recipes</h2>
- 
+
+<h3>Recipes</h3>
+ <table style="width:100%">
+   <tr>
+     <td>Title</td>
+     <td>Description</td>
+   </tr>
+   {% for recipe in recipes %}
+   <tr>
+     <td>{{ recipe.recipe_title }}</td>
+     <td>{{ recipe.recipe_description }}</td>
+   </tr>
+   {% endfor %}
+ </table>
+
   </body>
 </html>
